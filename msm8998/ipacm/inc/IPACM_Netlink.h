@@ -51,9 +51,11 @@ extern "C"
 #include <pthread.h>
 #include <sys/select.h>
 #include <sys/socket.h>
+#ifdef INLINE_KERNEL_BUILD
 #include <linux/socket.h>
 #include <inaddr.h>
 #define sockaddr_storage __kernel_sockaddr_storage
+#endif
 #include <linux/if.h>
 #include <linux/if_addr.h>
 #include <linux/rtnetlink.h>

@@ -35,6 +35,10 @@ ifeq ($(call is-board-platform-in-list,$(BOARD_IPAv3_LIST)),true)
 LOCAL_CFLAGS += -DFEATURE_IPA_V3
 endif
 
+ifeq ($(INLINE_KERNEL_BUILDING),true)
+LOCAL_CFLAGS += -DINLINE_KERNEL_BUILD
+endif
+
 LOCAL_CFLAGS += \
         -Wall \
         -Werror \
